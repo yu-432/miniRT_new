@@ -6,7 +6,7 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 12:12:49 by yooshima          #+#    #+#             */
-/*   Updated: 2024/12/11 18:54:44 by yooshima         ###   ########.fr       */
+/*   Updated: 2024/12/12 14:35:50 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ typedef struct s_camera
 typedef struct s_light
 {
 	double light_brightness;
-	t_color	color;
 	t_vec3 position;
 }	t_light;
 
@@ -62,6 +61,29 @@ typedef enum s_obj_kind
 	PLANE,
 	SYLINDER
 }	t_obj_kind;
+
+typedef struct s_sphere
+{
+	t_vec3 position;
+	double diametor;
+	t_color color;
+}	t_sphere;
+
+typedef struct s_plane
+{
+	t_vec3 position;
+	t_vec3 normal_vec;
+	t_color color;
+}	t_plane;
+
+typedef struct s_cylinder
+{
+	t_vec3 position;
+	t_vec3 normal_vec;
+	double diametor;
+	double height;
+	t_color color;
+}	t_sylinder;
 
 typedef struct s_obj
 {
@@ -93,6 +115,8 @@ typedef struct s_miniRT
 {
 	t_mlx	*mlx;
 	t_scene *scene;
-};
+}	t_miniRT;
+
+t_miniRT sample_input(void);
 
 # endif
