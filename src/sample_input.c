@@ -6,16 +6,18 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 11:16:38 by yooshima          #+#    #+#             */
-/*   Updated: 2024/12/12 14:36:13 by yooshima         ###   ########.fr       */
+/*   Updated: 2024/12/13 13:02:11 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/miniRT.h"
+#include "../header/minirt.h"
 
 t_miniRT sample_input(void)
 {
 	t_miniRT res;
 	
+	res.width = 800;
+	res.height = 800;
 	////
 	t_camera *camera = ft_calloc(1, sizeof(t_camera));
 	camera->fov = 70;

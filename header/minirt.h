@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   miniRT.h                                           :+:      :+:    :+:   */
+/*   minirt.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 12:12:49 by yooshima          #+#    #+#             */
-/*   Updated: 2024/12/12 14:35:50 by yooshima         ###   ########.fr       */
+/*   Updated: 2024/12/13 13:01:58 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,8 @@
 #include <stdbool.h>
 #include <fcntl.h>
 #include "../libft/libft.h"
+#include "../minilibx-linux/mlx.h"
 #include "vec3_calc.h"
-
-typedef struct s_vec3
-{
-	double x;
-	double y;
-	double z;
-}	t_vec3;
 
 typedef struct s_color
 {
@@ -35,6 +29,12 @@ typedef struct s_color
 	int green;
 	int blue;
 }	t_color;
+
+typedef struct s_ray
+{
+	t_vec3 origin;
+	t_vec3 direction;
+}	t_ray;
 
 typedef struct s_camera
 {
@@ -59,7 +59,7 @@ typedef enum s_obj_kind
 {
 	SPHERE,
 	PLANE,
-	SYLINDER
+	CYLINDER
 }	t_obj_kind;
 
 typedef struct s_sphere
@@ -83,7 +83,7 @@ typedef struct s_cylinder
 	double diametor;
 	double height;
 	t_color color;
-}	t_sylinder;
+}	t_cylinder;
 
 typedef struct s_obj
 {
@@ -115,8 +115,15 @@ typedef struct s_miniRT
 {
 	t_mlx	*mlx;
 	t_scene *scene;
+	int width;
+	int height;
 }	t_miniRT;
 
-t_miniRT sample_input(void);
+t_miniRT	sample_input(void);
+int			xopen(const char *pathname, int flags);
+void		*xmalloc(size_t size);
+void		xclose(int fd);
+void *xmlx_init(void);
+void *xmlx_new_window(void *mlx, int width, int height, char *title);
 
 # endif

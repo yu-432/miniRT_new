@@ -6,11 +6,11 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 12:27:58 by yooshima          #+#    #+#             */
-/*   Updated: 2024/12/12 10:42:17 by yooshima         ###   ########.fr       */
+/*   Updated: 2024/12/13 11:36:28 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/miniRT.h"
+#include "../header/minirt.h"
 
 t_vec3	vec3_add(t_vec3 a, t_vec3 b)
 {

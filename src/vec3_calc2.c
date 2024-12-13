@@ -6,11 +6,11 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 12:30:51 by yooshima          #+#    #+#             */
-/*   Updated: 2024/12/11 12:56:45 by yooshima         ###   ########.fr       */
+/*   Updated: 2024/12/13 11:36:32 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/miniRT.h"
+#include "../header/minirt.h"
 
 t_vec3	vec_cross(t_vec3 a, t_vec3 b)
 {
